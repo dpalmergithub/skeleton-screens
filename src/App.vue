@@ -1,8 +1,17 @@
 <template>
   <div id="app">
     <router-view/>
+    <GithubRibbon/>
   </div>
 </template>
+<script>
+  import GithubRibbon from "@/components/GithubRibbon"
+  export default {
+    components: {
+      GithubRibbon
+    }
+  }
+</script>
 
 <style>
   #app {

@@ -1,5 +1,5 @@
 <template>
-    <div id="ribbon">
+    <div id="github-ribbon">
 
     </div>
 </template>
@@ -9,4 +9,12 @@
     }
 </script>
 <style scoped>
+    #github-ribbon {
+        position: fixed;
+        right: 0;
+        top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 </style>
