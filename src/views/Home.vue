@@ -21,10 +21,11 @@
         <b-col cols="12" md="3">
           <div class="app-categories">
             <h5 class="text-center">Categories</h5>
-            <div class="app-category-pill" role="button">Panels</div>
-            <div class="app-category-pill" role="button">Cards</div>
-            <div class="app-category-pill" role="button">Profiles</div>
-            <div class="app-category-pill" role="button">Lists</div>
+            <div class="app-category-pill" role="button" @click="filterSetting = 'allComponents'">All</div>
+            <div class="app-category-pill" role="button" @click="filterSetting = 'filteredByCategory';category = 'panel'">Panels</div>
+            <div class="app-category-pill" role="button" @click="filterSetting = 'filteredByCategory';category = 'card'">Cards</div>
+            <div class="app-category-pill" role="button" @click="filterSetting = 'filteredByCategory';category = 'profile'">Profiles</div>
+            <div class="app-category-pill" role="button" @click="filterSetting = 'filteredByCategory';category = 'list'">Lists</div>
           </div>
         </b-col>
         <b-col cols="12" md="6">
@@ -33,8 +34,8 @@
         ************************
         ************************
           -->
-          <div v-for="(c, index) in components" :key="index">
-            <component v-bind:is="c"></component>
+          <div v-for="(c, index) in componentsFilter" :key="index">
+            <component v-bind:is="c.name"></component>
           </div>
           <!--
         **************************
@@ -82,10 +83,40 @@
     },
     data() {
       return {
+        filterSetting: "allComponents",
+        category: '',
         loading: true,
         htmlSourceCode: "",
         cssSourceCode: "",
-        components: ["TitleContentButton", "ProfileCircleShimmer", "ImageCard", "ListPanels", "LinkedInProfileBlock"]
+        components: [{
+          name: "TitleContentButton",
+          tags: ["panel"]
+        }, {
+          name: "ProfileCircleShimmer",
+          tags: ["profile"]
+        }, {
+          name: "ImageCard",
+          tags: ["card"]
+        }, {
+          name: "ListPanels",
+          tags: ["panel", "list"]
+        }, {
+          name: "LinkedInProfileBlock",
+          tags: ["profile"]
+        }]
+      }
+    },
+    computed: {
+      componentsFilter() {
+        return this[this.filterSetting];
+      },
+
+      allComponents() {
+        return this.components;
+      },
+
+      filteredByCategory() {
+        return this.components.filter((c) => c.tags.indexOf(this.category) != "-1");
       }
     },
     mounted() {
@@ -135,6 +166,7 @@
     padding: 6px 15px;
     background: #ccc;
     margin: 5px;
+    cursor: pointer;
   }
 
   @keyframes fade-in {
