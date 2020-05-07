@@ -1,12 +1,12 @@
 <template>
-    <div class="app-panel">
+    <div class="app-panel shadow">
         <div class="app-panel-header d-flex align-items-center">
             <div class="app-panel-header-red-circle"></div>
             <div class="app-panel-header-orange-circle"></div>
             <div class="app-panel-header-green-circle"></div>
             <b-button class="ml-auto mr-1 btn-sm" variant="dark" @click="triggerModal()">Source</b-button>
         </div>
-        <div class="p-2">
+        <div class="pb-5">
             <div class="d-flex align-items-center flex-column justify-content-center">
                 <slot></slot>
             </div>

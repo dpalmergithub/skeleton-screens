@@ -1,6 +1,20 @@
 <template>
   <div>
-    <b-jumbotron class="rounded-0" header="Skeleton Screens" lead="Tired of loading circles? Dont worry, we are too.">
+    <b-jumbotron header-level="5" class="rounded-0 text-center" text-variant="dark" bg-variant="light">
+      <div v-show="loading" class="skeleton-app-header">
+        <div class="skeleton-app-title"></div>
+        <div class="skeleton-app-subtext"></div>
+        <div class="skeleton-app-subtext"></div>
+      </div>
+      <div class="app-header-content-wrapper" v-show="!loading">
+        <div class="h1 app-header-title display-3">
+          <b>Skeleton Screens</b>
+        </div>
+        <div class="app-header-subtext">
+          Tired of loading circles.
+          <br/>Don't worry, we are too.
+        </div>
+      </div>
     </b-jumbotron>
     <b-container>
       <b-col cols="12" md="8" offset-md="2">
@@ -64,6 +78,7 @@
     },
     data() {
       return {
+        loading: true,
         htmlSourceCode: "",
         cssSourceCode: ""
       }
@@ -76,8 +91,62 @@
           this.$root.$emit('bv::show::modal', 'app-modal');
         }
       });
+
+      setTimeout(() => {
+        this.loading = false;
+      }, 500);
     }
   }
 </script>
-<style>
+<style scoped>
+  .app-header-content-wrapper {
+    opacity: 0;
+    animation: fade-in 1s forwards;
+  }
+
+  .skeleton-app-title {
+    max-width: 600px;
+    border-radius: 100px;
+    height: 50px;
+    margin: 0 auto;
+    background-color: #e1e1e1;
+    opacity: 0.5;
+    animation: fading 1.5s infinite;
+
+  }
+
+  .skeleton-app-subtext {
+    max-width: 300px;
+    border-radius: 100px;
+    height: 15px;
+    margin: 20px auto;
+    background-color: #e1e1e1;
+    opacity: 0.5;
+    animation: fading 1.5s infinite;
+
+  }
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fading {
+    0% {
+      opacity: 0.5;
+    }
+
+    50% {
+      opacity: 1;
+    }
+
+    100% {
+      opacity: 0.5;
+    }
+  }
 </style>
