@@ -11,7 +11,7 @@
         name: 'ProfileCircleShimmer'
     }
 </script>
-<style>
+<style scoped>
     .skeleton-profile-circle-shimmer {
         animation: shimmer 2s infinite;
         background: #ddd linear-gradient(to right, rgba(255, 255, 255, .10) 5%, rgba(255, 255, 255, .30) 10%, rgba(255, 255, 255, .50) 15%);

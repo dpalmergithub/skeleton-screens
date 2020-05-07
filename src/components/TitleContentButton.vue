@@ -15,7 +15,7 @@
         name: 'TitleContentButton'
     }
 </script>
-<style>
+<style scoped>
     .skeleton-panel {
         width: 100%;
         padding: 15px;

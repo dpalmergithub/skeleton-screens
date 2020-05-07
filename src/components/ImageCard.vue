@@ -15,7 +15,7 @@
         name: 'ImageCard'
     }
 </script>
-<style>
+<style scoped>
     .skeleton-img-card {
         height: 250px;
         width: 250px;

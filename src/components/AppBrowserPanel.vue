@@ -7,7 +7,7 @@
             <b-button class="ml-auto mr-1" variant="primary">Source</b-button>
         </div>
         <div class="p-2">
-            <div class="d-flex align-items-center flex-column">
+            <div class="d-flex align-items-center flex-column justify-content-center">
                 <slot></slot>
             </div>
         </div>
