@@ -17,28 +17,32 @@
       </div>
     </b-jumbotron>
     <b-container>
-      <b-col cols="12" md="8" offset-md="2">
-        <!--Skeleton Components
-    **************************
-    **************************
-    **************************
-    -->
-        <!--TitleContentButtonPanel-->
-        <TitleContentButton/>
-        <!--ProfileCircleShimmer-->
-        <ProfileCircleShimmer/>
-        <!--ImageCard-->
-        <ImageCard/>
-        <!--ListPanels-->
-        <ListPanels/>
-        <!--LinkedInProfileBlock-->
-        <LinkedInProfileBlock/>
-        <!--
-      **************************
-      **************************
-      **************************
-      Skeleton Components End-->
-      </b-col>
+      <b-row>
+        <b-col cols="12" md="3">
+          <div class="app-categories">
+            <h5 class="text-center">Categories</h5>
+            <div class="app-category-pill" role="button">Panels</div>
+            <div class="app-category-pill" role="button">Cards</div>
+            <div class="app-category-pill" role="button">Profiles</div>
+            <div class="app-category-pill" role="button">Lists</div>
+          </div>
+        </b-col>
+        <b-col cols="12" md="6">
+          <!--Skeleton Components
+        ************************
+        ************************
+        ************************
+          -->
+          <div v-for="(c, index) in components" :key="index">
+            <component v-bind:is="c"></component>
+          </div>
+          <!--
+        **************************
+        **************************
+        **************************
+        Skeleton Components End-->
+        </b-col>
+      </b-row>
     </b-container>
     <!-- The modal -->
     <b-modal size="lg" id="app-modal" centered hide-footer>
@@ -80,7 +84,8 @@
       return {
         loading: true,
         htmlSourceCode: "",
-        cssSourceCode: ""
+        cssSourceCode: "",
+        components: ["TitleContentButton", "ProfileCircleShimmer", "ImageCard", "ListPanels", "LinkedInProfileBlock"]
       }
     },
     mounted() {
@@ -123,7 +128,13 @@
     background-color: #e1e1e1;
     opacity: 0.5;
     animation: fading 1.5s infinite;
+  }
 
+  .app-category-pill {
+    text-align: center;
+    padding: 6px 15px;
+    background: #ccc;
+    margin: 5px;
   }
 
   @keyframes fade-in {
