@@ -25,7 +25,6 @@
       **************************
       Skeleton Components End-->
       </b-col>
-      <b-button v-clipboard="msg" variant="primary" size="sm">Copy HTML</b-button>
     </b-container>
     <!-- The modal -->
     <b-modal size="lg" id="app-modal" centered hide-footer>
