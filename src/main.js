@@ -7,6 +7,10 @@ import {
   BootstrapVue,
   IconsPlugin
 } from 'bootstrap-vue'
+import VueHighlightJS from 'vue-highlightjs'
+
+// Tell Vue.js to use vue-highlightjs
+Vue.use(VueHighlightJS)
 
 // Install BootstrapVue
 Vue.use(BootstrapVue)

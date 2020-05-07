@@ -4,7 +4,7 @@
             <div class="app-panel-header-red-circle"></div>
             <div class="app-panel-header-orange-circle"></div>
             <div class="app-panel-header-green-circle"></div>
-            <b-button class="ml-auto mr-1 btn-sm" variant="dark">Source</b-button>
+            <b-button class="ml-auto mr-1 btn-sm" variant="dark" v-b-modal="'app-modal'">Source</b-button>
         </div>
         <div class="p-2">
             <div class="d-flex align-items-center flex-column justify-content-center">

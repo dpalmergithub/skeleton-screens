@@ -8,6 +8,7 @@
             <div class="skeleton-panel-content"></div>
             <div class="skeleton-panel-btn"></div>
         </div>
+        <b-modal id="my-modal">Hello From My Modal!</b-modal>
     </div>
 </template>
 <script>
@@ -21,6 +22,7 @@
         padding: 15px;
         border: thin solid #e6e6e6;
         border-radius: 3px;
+        overflow: hidden;
     }
 
     .skeleton-panel-title {

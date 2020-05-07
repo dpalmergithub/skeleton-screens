@@ -24,4 +24,21 @@
   #nav a.router-link-exact-active {
     color: #42b983 !important;
   }
+
+  .modal-backdrop {
+    opacity: 0.5 !important;
+  }
+
+  .modal-header {
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center !important;
+    position: relative;
+  }
+
+  .modal-header .close {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
 </style>
