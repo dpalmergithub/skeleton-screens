@@ -10,44 +10,42 @@
     <b-container>
       <b-col cols="12" md="8" offset-md="2">
         <!--Skeleton Components
-      **************************
-      **************************
-      **************************
-      -->
+    **************************
+    **************************
+    **************************
+    -->
         <!--TitleContentButtonPanel-->
-        <AppBrowserPanel>
-          <TitleContentButton/>
-        </AppBrowserPanel>
+        <TitleContentButton/>
         <!--ProfileCircleShimmer-->
-        <AppBrowserPanel>
-          <ProfileCircleShimmer/>
-        </AppBrowserPanel>
+        <ProfileCircleShimmer/>
         <!--ImageCard-->
-        <AppBrowserPanel>
-          <ImageCard/>
-        </AppBrowserPanel>
+        <ImageCard/>
         <!--ListPanels-->
-        <AppBrowserPanel>
-          <ListPanels/>
-        </AppBrowserPanel>
+        <ListPanels/>
         <!--LinkedInProfileBlock-->
-        <AppBrowserPanel>
-          <LinkedInProfileBlock/>
-        </AppBrowserPanel>
+        <LinkedInProfileBlock/>
         <!--
-        **************************
-        **************************
-        **************************
-        Skeleton Components End-->
+      **************************
+      **************************
+      **************************
+      Skeleton Components End-->
       </b-col>
     </b-container>
     <!-- The modal -->
-    <b-modal id="app-modal" centered ok-only ok-title="Copy">
+    <b-modal id="app-modal" centered hide-footer>
       <!-- If you want to highlight hardcoded source-code -->
       <div>
+        <div class="mb-3">
+          <h5>HTML</h5>
+          <b-button variant="primary" size="sm">Copy HTML</b-button>
+        </div>
         <pre v-highlightjs="htmlSourceCode"><code class="html"></code></pre>
       </div>
       <div>
+        <div class="mb-3">
+          <h5>CSS</h5>
+          <b-button variant="primary" size="sm">Copy CSS</b-button>
+        </div>
         <pre v-highlightjs="cssSourceCode"><code class="html"></code></pre>
       </div>
     </b-modal>
@@ -55,7 +53,6 @@
 </template>
 
 <script>
-  import AppBrowserPanel from "@/components/AppBrowserPanel"
   import TitleContentButton from "@/components/TitleContentButton"
   import ProfileCircleShimmer from "@/components/ProfileCircleShimmer"
   import ImageCard from "@/components/ImageCard"
@@ -64,7 +61,6 @@
   export default {
     name: 'Home',
     components: {
-      AppBrowserPanel,
       TitleContentButton,
       ProfileCircleShimmer,
       ImageCard,
@@ -73,59 +69,18 @@
     },
     data() {
       return {
-        htmlSourceCode: `    
-    <div class="skeleton-panel">
-        <div class="skeleton-panel-title"></div>
-        <div class="skeleton-panel-content"></div>
-        <div class="skeleton-panel-btn"></div>
-    </div>`,
-        cssSourceCode: `<style>
-    .skeleton-panel {
-        width: 100%;
-        padding: 15px;
-        border: thin solid #e6e6e6;
-        border-radius: 3px;
-        overflow: hidden;
-    }
-
-    .skeleton-panel-title {
-        max-width: 200px;
-    }
-
-    .skeleton-panel-content {
-        max-width: 300px;
-    }
-
-    .skeleton-panel-btn {
-        max-width: 50px;
-    }
-
-    .skeleton-panel-title,
-    .skeleton-panel-content,
-    .skeleton-panel-btn {
-        border-radius: 100px;
-        height: 25px;
-        margin: 15px 0;
-        background-color: #e1e1e1;
-        opacity: 0.5;
-        animation: fading 1.5s infinite;
-    }
-
-    @keyframes fading {
-        0% {
-            opacity: 0.5;
-        }
-
-        50% {
-            opacity: 1;
-        }
-
-        100% {
-            opacity: 0.5;
-        }
-    }
-</style>`
+        htmlSourceCode: "",
+        cssSourceCode: ""
       }
+    },
+    mounted() {
+      this.$root.$on("changeSourceCode", (data) => {
+        if (data && data.htmlSourceCode && data.cssSourceCode) {
+          this.htmlSourceCode = data.htmlSourceCode;
+          this.cssSourceCode = data.cssSourceCode;
+          this.$root.$emit('bv::show::modal', 'app-modal');
+        }
+      });
     }
   }
 </script>

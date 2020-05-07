@@ -1,18 +1,24 @@
 <template>
-    <div>
-        <div class="h4 my-3 text-center">
-            LinkedIn Profile Block
+    <AppBrowserPanel>
+        <div>
+            <div class="h4 my-3 text-center">
+                LinkedIn Profile Block
+            </div>
+            <div class="skeleton-linkedin-profile-block-wrapper">
+                <div class="skeleton-linkedin-profile-block-header"></div>
+                <div class="skeleton-linkedin-profile-block-content"></div>
+            </div>
         </div>
-        <div class="skeleton-linkedin-profile-block-wrapper">
-            <div class="skeleton-linkedin-profile-block-header"></div>
-            <div class="skeleton-linkedin-profile-block-content"></div>
-        </div>
-    </div>
+    </AppBrowserPanel>
 </template>
 
 <script>
+    import AppBrowserPanel from "@/components/AppBrowserPanel"
     export default {
-        name: 'LinkedInProfileBlock'
+        name: 'LinkedInProfileBlock',
+        components: {
+            AppBrowserPanel
+        }
     }
 </script>
 

@@ -1,19 +1,25 @@
 <template>
-    <div>
-        <div class="h4 my-3 text-center">
-            List Panels
+    <AppBrowserPanel>
+        <div>
+            <div class="h4 my-3 text-center">
+                List Panels
+            </div>
+            <div class="skeleton-list-panel"></div>
+            <div class="skeleton-list-panel"></div>
+            <div class="skeleton-list-panel"></div>
+            <div class="skeleton-list-panel"></div>
+            <div class="skeleton-list-panel"></div>
         </div>
-        <div class="skeleton-list-panel"></div>
-        <div class="skeleton-list-panel"></div>
-        <div class="skeleton-list-panel"></div>
-        <div class="skeleton-list-panel"></div>
-        <div class="skeleton-list-panel"></div>
-    </div>
+    </AppBrowserPanel>
 </template>
 
 <script>
+    import AppBrowserPanel from "@/components/AppBrowserPanel"
     export default {
-        name: 'ListPanels'
+        name: 'ListPanels',
+        components: {
+            AppBrowserPanel
+        }
     }
 </script>
 

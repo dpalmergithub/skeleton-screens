@@ -1,19 +1,25 @@
 <template>
-    <div>
-        <div class="h4 my-3 text-center">
-            Image Card
-        </div>
-        <div class="skeleton-img-card">
-            <div class="skeleton-img-card-image"></div>
-            <div class="skeleton-img-card-content">
+    <AppBrowserPanel>
+        <div>
+            <div class="h4 my-3 text-center">
+                Image Card
             </div>
-            <div class="skeleton-img-card-btn"></div>
+            <div class="skeleton-img-card">
+                <div class="skeleton-img-card-image"></div>
+                <div class="skeleton-img-card-content">
+                </div>
+                <div class="skeleton-img-card-btn"></div>
+            </div>
         </div>
-    </div>
+    </AppBrowserPanel>
 </template>
 <script>
+    import AppBrowserPanel from "@/components/AppBrowserPanel"
     export default {
-        name: 'ImageCard'
+        name: 'ImageCard',
+        components: {
+            AppBrowserPanel
+        }
     }
 </script>
 <style scoped>

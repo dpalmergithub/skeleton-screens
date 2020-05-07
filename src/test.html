@@ -7,58 +7,38 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        .skeleton-panel {
+        .bg-primary {
+            height: 500px;
             width: 100%;
-            padding: 15px;
-            border: thin solid #e6e6e6;
+            position: relative;
+            background: red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-        .skeleton-panel-title {
-            max-width: 200px;
+        .bg-primary *:not(.overlay) {
+            position: relative;
+            z-index: 2;
+            color: #fff;
         }
 
-        .skeleton-panel-content {
-            max-width: 300px;
-        }
-
-        .skeleton-panel-btn {
-            max-width: 50px;
-        }
-
-        .skeleton-panel-title,
-        .skeleton-panel-content,
-        .skeleton-panel-btn {
-            border-radius: 100px;
-            height: 25px;
-            margin: 15px 0;
-            background-color: #e1e1e1;
-            opacity: 0.5;
-            animation: fading 1.5s infinite;
-        }
-
-        @keyframes fading {
-            0% {
-                opacity: 0.5;
-            }
-
-            50% {
-                opacity: 1;
-            }
-
-            100% {
-                opacity: 0.5;
-            }
+        .overlay {
+            position: absolute;
+            z-index: 1;
+            height: 100%;
+            width: 100%;
+            filter: blur(4px);
+            background: rgba(0, 0, 0, .60);
         }
     </style>
 </head>
 
 <body>
-    <h1>Testing</h1>
-    <div class="skeleton-panel">
-        <div class="skeleton-panel-title"></div>
-        <div class="skeleton-panel-content"></div>
-        <div class="skeleton-panel-btn"></div>
-    </div>
+    <header class="bg-primary">
+        <div class="overlay"></div>
+        <h1>Testing</h1>
+    </header>
 </body>
 
 </html>

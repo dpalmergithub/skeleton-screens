@@ -1,14 +1,20 @@
 <template>
-    <div>
-        <div class="h4 my-3 text-center">
-            Profile Circle Shimmer
+    <AppBrowserPanel>
+        <div>
+            <div class="h4 my-3 text-center">
+                Profile Circle Shimmer
+            </div>
+            <div class="skeleton-profile-circle-shimmer"></div>
         </div>
-        <div class="skeleton-profile-circle-shimmer"></div>
-    </div>
+    </AppBrowserPanel>
 </template>
 <script>
+    import AppBrowserPanel from "@/components/AppBrowserPanel"
     export default {
-        name: 'ProfileCircleShimmer'
+        name: 'ProfileCircleShimmer',
+        components: {
+            AppBrowserPanel
+        }
     }
 </script>
 <style scoped>
