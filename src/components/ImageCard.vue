@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="h4 my-3">
+        <div class="h4 my-3 text-center">
             Image Card
         </div>
         <div class="skeleton-img-card">

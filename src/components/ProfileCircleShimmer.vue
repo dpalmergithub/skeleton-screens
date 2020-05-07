@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="h4 my-3">
+        <div class="h4 my-3 text-center">
             Profile Circle Shimmer
         </div>
         <div class="skeleton-profile-circle-shimmer"></div>
