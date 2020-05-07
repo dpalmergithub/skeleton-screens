@@ -1,13 +1,29 @@
 <template>
-    <div></div>
+    <AppBrowserPanel :sourceCode="sourceCode">
+        <div>
+            <div class="h4 my-3 text-center">
+                Your Title Here
+            </div>
+            <!--your html here -->
+        </div>
+    </AppBrowserPanel>
 </template>
-
 <script>
+    import AppBrowserPanel from "@/components/AppBrowserPanel"
     export default {
-        name: 'name'
+        name: 'DefaultTemplate',
+        components: {
+            AppBrowserPanel
+        },
+        data() {
+            return {
+                sourceCode: {
+                    htmlSourceCode: "",
+                    cssSourceCode: ""
+                }
+            }
+        }
     }
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 </style>
