@@ -26,6 +26,9 @@
         <AppBrowserPanel>
           <ListPanels/>
         </AppBrowserPanel>
+        <AppBrowserPanel>
+          <LinkedInProfileBlock/>
+        </AppBrowserPanel>
         <!--Skeleton Components End-->
       </b-col>
     </b-container>
@@ -38,6 +41,7 @@
   import ProfileCircleShimmer from "@/components/ProfileCircleShimmer"
   import ImageCard from "@/components/ImageCard"
   import ListPanels from "@/components/ListPanels"
+  import LinkedInProfileBlock from "@/components/LinkedInProfileBlock"
   export default {
     name: 'Home',
     components: {
@@ -45,7 +49,8 @@
       TitleContentButton,
       ProfileCircleShimmer,
       ImageCard,
-      ListPanels
+      ListPanels,
+      LinkedInProfileBlock
     }
   }
 </script>
