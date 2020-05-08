@@ -19,12 +19,17 @@
     <b-container>
       <b-row>
         <b-col cols="12">
-          <div class="app-categories d-flex justify-content-center">
-            <div class="app-category-pill" role="button" @click="filterSetting = 'allComponents'">All</div>
-            <div class="app-category-pill" role="button" @click="filterSetting = 'filteredByCategory';category = 'panel'">Panels</div>
-            <div class="app-category-pill" role="button" @click="filterSetting = 'filteredByCategory';category = 'card'">Cards</div>
-            <div class="app-category-pill" role="button" @click="filterSetting = 'filteredByCategory';category = 'profile'">Profiles</div>
-            <div class="app-category-pill" role="button" @click="filterSetting = 'filteredByCategory';category = 'list'">Lists</div>
+          <div>
+            <div v-if="loading" class="app-categories d-inline-block d-sm-flex justify-content-center">
+              <div v-for="(p,index) in appPillSkeletons" :key="index" class="skeleton-app-category-pill"></div>
+            </div>
+            <div v-if="!loading" class="app-categories d-inline-block d-sm-flex justify-content-center">
+              <div class="app-category-pill" role="button" @click="filterSetting = 'allComponents'">All</div>
+              <div class="app-category-pill" role="button" @click="filterSetting = 'filteredByCategory';category = 'panel'">Panels</div>
+              <div class="app-category-pill" role="button" @click="filterSetting = 'filteredByCategory';category = 'card'">Cards</div>
+              <div class="app-category-pill" role="button" @click="filterSetting = 'filteredByCategory';category = 'profile'">Profiles</div>
+              <div class="app-category-pill" role="button" @click="filterSetting = 'filteredByCategory';category = 'list'">Lists</div>
+            </div>
           </div>
         </b-col>
       </b-row>
@@ -99,6 +104,7 @@
     },
     data() {
       return {
+        appPillSkeletons: Array.apply(null, Array(5)).map(function () {}),
         modalID: "app-modal",
         filterSetting: "allComponents",
         category: '',
@@ -171,10 +177,23 @@
     font-weight: 900;
   }
 
+  .skeleton-app-category-pill {
+    background-color: #e1e1e1;
+    opacity: 0.5;
+    animation: fading 1.5s infinite;
+    background: #ccc;
+    height: 36px;
+    width: 100px;
+    padding: 6px 15px;
+    margin: 5px;
+    display: inline-block;
+    border-radius: 100px;
+  }
+
   .skeleton-app-title {
     max-width: 600px;
     border-radius: 100px;
-    height: 50px;
+    height: 85px;
     margin: 0 auto;
     background-color: #e1e1e1;
     opacity: 0.5;
@@ -183,10 +202,10 @@
   }
 
   .skeleton-app-subtext {
-    max-width: 300px;
+    max-width: 200px;
     border-radius: 100px;
-    height: 15px;
-    margin: 20px auto;
+    height: 20px;
+    margin: 8px auto 0 auto;
     background-color: #e1e1e1;
     opacity: 0.5;
     animation: fading 1.5s infinite;
@@ -196,9 +215,12 @@
     text-align: center;
     padding: 6px 15px;
     background: #ccc;
+    height: 36px;
+    width: 100px;
     margin: 5px;
     cursor: pointer;
     display: inline-block;
+    border-radius: 100px;
   }
 
   @keyframes fade-in {
