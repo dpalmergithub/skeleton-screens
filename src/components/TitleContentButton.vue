@@ -2,7 +2,7 @@
     <AppBrowserPanel :sourceCode="sourceCode">
         <div>
             <div class="h4 my-3 text-center">
-                Title-Content-Button-Panel
+                Title-Content-Button
             </div>
             <div class="skeleton-panel">
                 <div class="skeleton-panel-title"></div>

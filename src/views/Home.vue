@@ -11,14 +11,15 @@
           <b>Skeleton Screens</b>
         </div>
         <div class="app-header-subtext">
-          Tired of loading circles.
-          <br/>Don't worry, we are too.
+          <p style="font-size:1.8rem;">Tired of loading circles?</p>
+          <p style="font-size:1.5rem;">Don't worry, we are too.</p>
         </div>
         <!--https://api.github.com/repos/dpalmergithub/skeleton-screens-->
         <div class="d-flex justify-content-center align-items-center mt-3 app-star-count-wrapper">
           <b-icon icon="star-fill"></b-icon>
           <span class="d-inline-block ml-2" style="margin-top:2px;">{{ starCount }}</span>
         </div>
+        <small class="text-muted">This page is a work in progress</small>
       </div>
     </b-jumbotron>
     <b-container>
