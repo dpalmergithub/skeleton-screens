@@ -80,11 +80,12 @@
 </script>
 <style scoped>
     .skeleton-panel {
-        width: 100%;
+        max-width: 80%;
         padding: 15px;
         border: thin solid #e6e6e6;
         border-radius: 3px;
         overflow: hidden;
+        margin: 0 auto;
     }
 
     .skeleton-panel-title {

@@ -4,11 +4,13 @@
             <div class="h4 my-3 text-center">
                 List Panels
             </div>
-            <div class="skeleton-list-panel"></div>
-            <div class="skeleton-list-panel"></div>
-            <div class="skeleton-list-panel"></div>
-            <div class="skeleton-list-panel"></div>
-            <div class="skeleton-list-panel"></div>
+            <div class="skeleton-list-panel-wrapper">
+                <div class="skeleton-list-panel"></div>
+                <div class="skeleton-list-panel"></div>
+                <div class="skeleton-list-panel"></div>
+                <div class="skeleton-list-panel"></div>
+                <div class="skeleton-list-panel"></div>
+            </div>
         </div>
     </AppBrowserPanel>
 </template>
@@ -82,12 +84,15 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+    .skeleton-list-panel-wrapper {
+        padding: 10px;
+    }
+
     .skeleton-list-panel {
-        width: 100%;
+        max-width: 80%;
         height: 50px;
         background: #ccc;
-        margin: 15px 0;
-        min-width: 300px;
+        margin: 15px auto;
         animation: fading 1.5s infinite;
     }
 

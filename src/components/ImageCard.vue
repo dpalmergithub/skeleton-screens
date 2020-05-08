@@ -89,10 +89,11 @@
 <style scoped>
     .skeleton-img-card {
         height: 300px;
-        width: 250px;
+        max-width: 80%;
         border: thin solid #e6e6e6;
         border-radius: 6px;
         overflow: hidden;
+        margin: 0 auto;
     }
 
     .skeleton-img-card-image {

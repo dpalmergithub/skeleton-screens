@@ -18,9 +18,8 @@
     </b-jumbotron>
     <b-container>
       <b-row>
-        <b-col cols="12" md="3">
-          <div class="app-categories">
-            <h5 class="text-center">Categories</h5>
+        <b-col cols="12">
+          <div class="app-categories d-flex justify-content-center">
             <div class="app-category-pill" role="button" @click="filterSetting = 'allComponents'">All</div>
             <div class="app-category-pill" role="button" @click="filterSetting = 'filteredByCategory';category = 'panel'">Panels</div>
             <div class="app-category-pill" role="button" @click="filterSetting = 'filteredByCategory';category = 'card'">Cards</div>
@@ -28,13 +27,16 @@
             <div class="app-category-pill" role="button" @click="filterSetting = 'filteredByCategory';category = 'list'">Lists</div>
           </div>
         </b-col>
-        <b-col cols="12" md="6">
+      </b-row>
+      <hr/>
+      <div>
+        <div class="card-columns">
           <!--Skeleton Components
         ************************
         ************************
         ************************
           -->
-          <div v-for="(c, index) in componentsFilter" :key="index">
+          <div class="card border-0" v-for="(c, index) in componentsFilter" :key="index">
             <component v-bind:is="c.name"></component>
           </div>
           <!--
@@ -42,8 +44,8 @@
         **************************
         **************************
         Skeleton Components End-->
-        </b-col>
-      </b-row>
+        </div>
+      </div>
     </b-container>
     <!-- The modal -->
     <b-modal size="lg" :id="modalID" centered hide-footer>
@@ -165,6 +167,10 @@
     animation: fade-in 1s forwards;
   }
 
+  .app-header-title {
+    font-weight: 900;
+  }
+
   .skeleton-app-title {
     max-width: 600px;
     border-radius: 100px;
@@ -192,6 +198,7 @@
     background: #ccc;
     margin: 5px;
     cursor: pointer;
+    display: inline-block;
   }
 
   @keyframes fade-in {

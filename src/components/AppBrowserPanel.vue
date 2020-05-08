@@ -7,7 +7,8 @@
             <b-button class="ml-auto mr-1 btn-sm" variant="dark" @click="triggerModal()">Source</b-button>
         </div>
         <div class="pb-5">
-            <div class="d-flex align-items-center flex-column justify-content-center">
+            <!--d-flex align-items-center flex-column justify-content-center-->
+            <div class="">
                 <slot></slot>
             </div>
         </div>
@@ -30,7 +31,7 @@
         border-radius: 6px;
         width: 100%;
         min-height: 250px;
-        margin: 15px auto;
+        margin: 0 auto;
     }
 
     .app-panel-header {

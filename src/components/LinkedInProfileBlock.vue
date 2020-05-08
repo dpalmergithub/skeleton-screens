@@ -78,8 +78,9 @@
     .skeleton-linkedin-profile-block-wrapper {
         border-radius: 6px;
         min-height: 350px;
-        max-width: 350px;
+        max-width: 65%;
         box-shadow: 0 0 4px 1px rgba(0, 0, 0, .10);
+        margin: 0 auto;
 
     }
 

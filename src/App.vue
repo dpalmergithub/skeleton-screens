@@ -15,7 +15,7 @@
 
 <style>
   #app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
+    font-family: 'Roboto', Avenir, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: #2c3e50;
@@ -74,5 +74,29 @@
     height: 14px;
     margin-right: 4px;
     width: 14px;
+  }
+
+  @media (min-width: 576px) {
+    .card-columns {
+      column-count: 1 !important;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .card-columns {
+      column-count: 2 !important;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .card-columns {
+      column-count: 3 !important;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .card-columns {
+      column-count: 3 !important;
+    }
   }
 </style>

@@ -112,9 +112,10 @@
         border: thin solid #e6e6e6;
         border-radius: 3px;
         box-shadow: 0 0 4px 1px rgba(0, 0, 0, .05);
-        max-width: 300px;
+        max-width: 80%;
         overflow: hidden;
         padding: 10px;
+        margin: 0 auto;
     }
 
     .skeleton-social-header {
