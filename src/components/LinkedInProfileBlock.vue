@@ -30,8 +30,9 @@
 .skeleton-linkedin-profile-block-wrapper {
     border-radius: 6px;
     min-height: 350px;
-    max-width: 350px;
+    max-width: 200px;
     box-shadow: 0 0 4px 1px rgba(0, 0, 0, .10);
+    margin: 0 auto;
 
 }
 
@@ -51,16 +52,13 @@
     transform: translateX(-50%);
     top: 50px;
     border-bottom-left-radius: 36px;
-    /* 100px of height + 10px of border */
     border-bottom-right-radius: 36px;
-    /* 100px of height + 10px of border */
     border: 36px solid #f3f6f8;
     border-bottom: 0;
 }
 
 .skeleton-linkedin-profile-block-content {
     min-height: 100px;
-    /*rgba(255, 255, 255, .20)*/
     background-image: linear-gradient( #f3f6f8 20px, transparent 0), linear-gradient( #f3f6f8 20px, transparent 0);
     background-size: 130px 20px, 150px 20px;
     background-repeat: no-repeat;
@@ -78,7 +76,7 @@
     .skeleton-linkedin-profile-block-wrapper {
         border-radius: 6px;
         min-height: 350px;
-        max-width: 65%;
+        max-width: 200px;
         box-shadow: 0 0 4px 1px rgba(0, 0, 0, .10);
         margin: 0 auto;
 
@@ -100,16 +98,13 @@
         transform: translateX(-50%);
         top: 50px;
         border-bottom-left-radius: 36px;
-        /* 100px of height + 10px of border */
         border-bottom-right-radius: 36px;
-        /* 100px of height + 10px of border */
         border: 36px solid #f3f6f8;
         border-bottom: 0;
     }
 
     .skeleton-linkedin-profile-block-content {
         min-height: 100px;
-        /*rgba(255, 255, 255, .20)*/
         background-image: linear-gradient( #f3f6f8 20px, transparent 0), linear-gradient( #f3f6f8 20px, transparent 0);
         background-size: 130px 20px, 150px 20px;
         background-repeat: no-repeat;

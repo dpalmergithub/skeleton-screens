@@ -76,6 +76,10 @@
     width: 14px;
   }
 
+  body.modal-open[style] {
+    padding-right: 0px !important;
+  }
+
   @media (min-width: 576px) {
     .card-columns {
       column-count: 1 !important;
