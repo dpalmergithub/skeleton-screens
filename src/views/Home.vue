@@ -46,7 +46,19 @@
       </b-row>
     </b-container>
     <!-- The modal -->
-    <b-modal size="lg" id="app-modal" centered hide-footer>
+    <b-modal size="lg" :id="modalID" centered hide-footer>
+      <template #modal-header>
+        <div class="w-100 d-flex align-items-center">
+          <div class="w-100 d-flex">
+            <div class="app-panel-header-red-circle"></div>
+            <div class="app-panel-header-orange-circle"></div>
+            <div class="app-panel-header-green-circle"></div>
+          </div>
+          <button @click="hideModal(modalID)" type="button" class="close" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      </template>
       <!-- If you want to highlight hardcoded source-code -->
       <div>
         <div class="mb-3">
@@ -85,6 +97,7 @@
     },
     data() {
       return {
+        modalID: "app-modal",
         filterSetting: "allComponents",
         category: '',
         loading: true,
@@ -126,12 +139,17 @@
         return this.components.filter((c) => c.tags.indexOf(this.category) != "-1");
       }
     },
+    methods: {
+      hideModal(id) {
+        return this.$bvModal.hide(id);
+      }
+    },
     mounted() {
       this.$root.$on("changeSourceCode", (data) => {
         if (data && data.htmlSourceCode && data.cssSourceCode) {
           this.htmlSourceCode = data.htmlSourceCode;
           this.cssSourceCode = data.cssSourceCode;
-          this.$root.$emit('bv::show::modal', 'app-modal');
+          this.$root.$emit('bv::show::modal', this.modalID);
         }
       });
 

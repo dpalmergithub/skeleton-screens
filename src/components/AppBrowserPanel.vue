@@ -39,28 +39,4 @@
         background-color: rgba(0, 0, 0, 0.05);
         padding-left: 10px;
     }
-
-    .app-panel-header-red-circle {
-        background-color: rgb(255, 65, 54);
-        border-radius: 100%;
-        height: 14px;
-        margin-right: 4px;
-        width: 14px;
-    }
-
-    .app-panel-header-orange-circle {
-        background-color: rgb(255, 168, 54);
-        border-radius: 100%;
-        height: 14px;
-        margin-right: 4px;
-        width: 14px;
-    }
-
-    .app-panel-header-green-circle {
-        background-color: rgb(32, 167, 20);
-        border-radius: 100%;
-        height: 14px;
-        margin-right: 4px;
-        width: 14px;
-    }
 </style>
