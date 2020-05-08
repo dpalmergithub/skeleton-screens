@@ -15,10 +15,10 @@
           <p style="font-size:1.5rem;">Don't worry, we are too.</p>
         </div>
         <!--https://api.github.com/repos/dpalmergithub/skeleton-screens-->
-        <div class="d-flex justify-content-center align-items-center mt-3 app-star-count-wrapper">
+        <a href="https://github.com/dpalmergithub/skeleton-screens" target="_blank" class="d-flex justify-content-center align-items-center mt-3 app-star-count-wrapper">
           <b-icon icon="star-fill"></b-icon>
           <span class="d-inline-block ml-2" style="margin-top:2px;">{{ starCount }}</span>
-        </div>
+        </a>
         <small class="text-muted">This page is a work in progress</small>
       </div>
     </b-jumbotron>
@@ -239,6 +239,8 @@
 
   .app-star-count-wrapper {
     font-size: 1.8rem;
+    text-decoration: none;
+    color: inherit;
   }
 
   @keyframes fade-in {
