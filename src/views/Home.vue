@@ -14,6 +14,11 @@
           Tired of loading circles.
           <br/>Don't worry, we are too.
         </div>
+        <!--https://api.github.com/repos/dpalmergithub/skeleton-screens-->
+        <div class="d-flex justify-content-center align-items-center mt-3 app-star-count-wrapper">
+          <b-icon icon="star-fill"></b-icon>
+          <span class="d-inline-block ml-2" style="margin-top:2px;">{{ starCount }}</span>
+        </div>
       </div>
     </b-jumbotron>
     <b-container>
@@ -104,6 +109,7 @@
     },
     data() {
       return {
+        starCount: 0,
         appPillSkeletons: Array.apply(null, Array(5)).map(function () {}),
         modalID: "app-modal",
         filterSetting: "allComponents",
@@ -161,10 +167,17 @@
         }
       });
 
-      setTimeout(() => {
-        this.loading = false;
-      }, 500);
+      this.$http.get("https://api.github.com/repos/dpalmergithub/skeleton-screens").then(res => {
+        this.starCount = res.data.stargazers_count;
+      }).catch(error => {
+        console.log(error)
+      }).finally(() => {
+        setTimeout(() => {
+          this.loading = false
+        }, 1000);
+      });
     }
+
   }
 </script>
 <style scoped>
@@ -221,6 +234,10 @@
     cursor: pointer;
     display: inline-block;
     border-radius: 100px;
+  }
+
+  .app-star-count-wrapper {
+    font-size: 1.8rem;
   }
 
   @keyframes fade-in {

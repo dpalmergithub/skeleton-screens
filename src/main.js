@@ -9,6 +9,10 @@ import {
 } from 'bootstrap-vue'
 import VueHighlightJS from 'vue-highlightjs'
 import VueClipboard from 'vue-clipboard2'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
+
+Vue.use(VueAxios, axios)
 
 Vue.use(VueClipboard);
 
