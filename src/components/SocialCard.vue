@@ -153,9 +153,12 @@
 
     .skeleton-social-img {
         width: 100%;
-        background: #e6e6e6;
         height: 150px;
         border-radius: 3px;
+        animation: shimmer 2s infinite;
+        background: #e6e6e6 linear-gradient(to right, rgba(255, 255, 255, .05) 5%, rgba(255, 255, 255, .10) 10%, rgba(255, 255, 255, .25) 15%);
+        background-size: 50px 150px;
+        background-repeat: no-repeat;
     }
 
     .skeleton-social-footer {
@@ -164,5 +167,14 @@
         background: #e6e6e6;
         border-radius: 100px;
         margin-top: 20px;
+    }
+
+    @keyframes shimmer {
+        0% {
+            background-position: -500px 0;
+        }
+        100% {
+            background-position: 500px 0;
+        }
     }
 </style>
