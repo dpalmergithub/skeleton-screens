@@ -72,6 +72,7 @@
   import ImageCard from "@/components/ImageCard"
   import ListPanels from "@/components/ListPanels"
   import LinkedInProfileBlock from "@/components/LinkedInProfileBlock"
+  import SocialCard from "@/components/SocialCard"
   export default {
     name: 'Home',
     components: {
@@ -79,7 +80,8 @@
       ProfileCircleShimmer,
       ImageCard,
       ListPanels,
-      LinkedInProfileBlock
+      LinkedInProfileBlock,
+      SocialCard
     },
     data() {
       return {
@@ -89,21 +91,26 @@
         htmlSourceCode: "",
         cssSourceCode: "",
         components: [{
-          name: "TitleContentButton",
-          tags: ["panel"]
-        }, {
-          name: "ProfileCircleShimmer",
-          tags: ["profile"]
-        }, {
-          name: "ImageCard",
-          tags: ["card"]
-        }, {
-          name: "ListPanels",
-          tags: ["panel", "list"]
-        }, {
-          name: "LinkedInProfileBlock",
-          tags: ["profile"]
-        }]
+            name: "TitleContentButton",
+            tags: ["panel"]
+          }, {
+            name: "ProfileCircleShimmer",
+            tags: ["profile"]
+          }, {
+            name: "ImageCard",
+            tags: ["card"]
+          }, {
+            name: "ListPanels",
+            tags: ["panel", "list"]
+          }, {
+            name: "LinkedInProfileBlock",
+            tags: ["profile"]
+          },
+          {
+            name: "SocialCard",
+            tags: ["card", "profile"]
+          }
+        ]
       }
     },
     computed: {
