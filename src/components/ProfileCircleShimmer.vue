@@ -9,6 +9,7 @@
     </AppBrowserPanel>
 </template>
 <script>
+    import ProfileShimmerTemplate from "@/skeletonTemplates/ProfileShimmer"
     import AppBrowserPanel from "@/components/AppBrowserPanel"
     export default {
         name: 'ProfileCircleShimmer',
@@ -18,28 +19,8 @@
         data() {
             return {
                 sourceCode: {
-                    htmlSourceCode: `<div class="skeleton-profile-circle-shimmer"></div>`,
-                    cssSourceCode: `<style>
-.skeleton-profile-circle-shimmer {
-animation: shimmer 2s infinite;
-background: #ddd linear-gradient(to right, rgba(255, 255, 255, .10) 5%, rgba(255, 255, 255, .30) 10%, rgba(255, 255, 255, .50) 15%);
-background-size: 150px 150px;
-background-repeat: no-repeat;
-height: 100px;
-width: 100px;
-border-radius: 50%;
-margin: 0 auto;
-}
-
-@keyframes shimmer {
-0% {
-background-position: -500px 0;
-}
-100% {
-background-position: 500px 0;
-}
-}
-</style>`
+                    htmlSourceCode: ProfileShimmerTemplate.htmlSourceCode,
+                    cssSourceCode: ProfileShimmerTemplate.cssSourceCode
                 }
             }
         }
