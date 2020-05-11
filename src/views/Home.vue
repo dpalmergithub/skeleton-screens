@@ -78,7 +78,7 @@
           <h5>HTML</h5>
           <b-button v-clipboard="htmlSourceCode" @click="copyType = 'html'" v-clipboard:success="onCopy" v-clipboard:error="onCopyError"
             variant="primary" size="sm">Copy HTML</b-button>
-          <span v-show="copyType == 'html'" :class="{ 'text-success': copyStatus == 'success','text-danger': copyStatus == 'error' }">{{ copyStatusMessage }}</span>
+          <span v-show="copyType == 'html'" class="ml-2" :class="{ 'text-success': copyStatus == 'success','text-danger': copyStatus == 'error' }">{{ copyStatusMessage }}</span>
         </div>
         <pre v-highlightjs="htmlSourceCode"><code class="html"></code></pre>
       </div>
@@ -87,7 +87,7 @@
           <h5>CSS</h5>
           <b-button v-clipboard="cssSourceCode" @click="copyType = 'css'" v-clipboard:success="onCopy" v-clipboard:error="onCopyError"
             variant="primary" size="sm">Copy CSS</b-button>
-          <span v-show="copyType == 'css'" :class="{ 'text-success': (copyStatus == 'success'),'text-danger': (copyStatus == 'error') }">{{ copyStatusMessage }}</span>
+          <span v-show="copyType == 'css'" class="ml-2" :class="{ 'text-success': (copyStatus == 'success'),'text-danger': (copyStatus == 'error') }">{{ copyStatusMessage }}</span>
         </div>
         <pre v-highlightjs="cssSourceCode"><code class="css"></code></pre>
       </div>
