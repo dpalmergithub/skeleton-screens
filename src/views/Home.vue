@@ -98,6 +98,7 @@
   import ListPanels from "@/components/ListPanels"
   import LinkedInProfileBlock from "@/components/LinkedInProfileBlock"
   import SocialCard from "@/components/SocialCard"
+  import MusicPlayer from "@/components/MusicPlayer"
   export default {
     name: 'Home',
     components: {
@@ -106,7 +107,8 @@
       ImageCard,
       ListPanels,
       LinkedInProfileBlock,
-      SocialCard
+      SocialCard,
+      MusicPlayer
     },
     data() {
       return {
@@ -137,6 +139,10 @@
           {
             name: "SocialCard",
             tags: ["card", "profile"]
+          },
+          {
+            name: "MusicPlayer",
+            tags: ["panel", "card", "music"]
           }
         ]
       }
