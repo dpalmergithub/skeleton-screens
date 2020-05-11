@@ -14,6 +14,11 @@
 </script>
 
 <style>
+  body.modal-open {
+    padding-right: 15px !important;
+    overflow: hidden;
+  }
+
   #app {
     font-family: 'Roboto', Avenir, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;

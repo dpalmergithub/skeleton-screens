@@ -44,6 +44,7 @@
         margin: 0 auto;
         padding: 10px;
         overflow: hidden;
+        position: relative;
     }
 
     .skeleton-mp-panel-img {
@@ -51,8 +52,9 @@
         max-width: 250px;
         margin: 0 auto;
         background: rgba(0, 0, 0, .05);
-        position: relative;
         overflow: hidden;
+        position: relative;
+        animation: fading 1.5s infinite;
 
     }
 
@@ -60,19 +62,16 @@
         content: "";
         position: absolute;
         z-index: 0;
-        top: -110%;
-        left: -210%;
-        width: 200%;
-        height: 200%;
+        width: 300%;
+        height: 300%;
         opacity: 0;
-        transform: rotate(30deg);
+
         background: rgba(0, 0, 0, .05);
-        ;
         background: linear-gradient( to right,
-        rgba(255, 255, 255, 0.10) 0%,
-        rgba(255, 255, 255, 0.50) 77%,
-        rgba(255, 255, 255, 0.90) 92%,
-        rgba(255, 255, 255, 0.0) 100%);
+        rgba(0, 0, 0, 0.05) 0%,
+        rgba(0, 0, 0, 0.10) 77%,
+        rgba(0, 0, 0, 0.15) 92%,
+        rgba(0, 0, 0, 0.0) 100%);
         animation: shimmer 1.5s infinite;
     }
 
@@ -87,6 +86,7 @@
         height: 8px;
         background-color: rgba(0, 0, 0, .05);
         margin: 15px 0 20px 0;
+        animation: fading 1.5s infinite;
     }
 
     .skeleton-mp-btn-wrapper {
@@ -104,6 +104,7 @@
     .skeleton-mp-skip-btn {
         background-color: rgba(0, 0, 0, .05);
         border-radius: 100px;
+        animation: fading 1.5s infinite;
     }
 
     .skeleton-mp-back-btn,
@@ -121,16 +122,31 @@
     @keyframes shimmer {
         0% {
             opacity: 0;
-            left: -210%;
-            top: -110%;
+            transform: translate(-500px, -300px) rotate(30deg);
+
         }
         50% {
-            opacity: 1;
+            opacity: .9;
+            transform: translate(500px, 0) rotate(30deg);
         }
         100% {
             opacity: 0;
-            left: -30%;
-            top: -30%;
+
+            transform: translate(1000px, 0) rotate(30deg);
+        }
+    }
+
+    @keyframes fading {
+        0% {
+            opacity: 0.5;
+        }
+
+        50% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0.5;
         }
     }
 </style>
