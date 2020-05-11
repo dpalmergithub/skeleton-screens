@@ -59,7 +59,7 @@
       </div>
     </b-container>
     <!-- The modal -->
-    <b-modal size="lg" :id="modalID" centered hide-footer>
+    <b-modal size="lg" :id="modalID" centered hide-footer @hide="triggerHideEvent">
       <template #modal-header>
         <div class="w-100 d-flex align-items-center">
           <div class="w-100 d-flex">
@@ -76,14 +76,18 @@
       <div>
         <div class="mb-3">
           <h5>HTML</h5>
-          <b-button v-clipboard="htmlSourceCode" variant="primary" size="sm">Copy HTML</b-button>
+          <b-button v-clipboard="htmlSourceCode" @click="copyType = 'html'" v-clipboard:success="onCopy" v-clipboard:error="onCopyError"
+            variant="primary" size="sm">Copy HTML</b-button>
+          <span v-show="copyType == 'html'" :class="{ 'text-success': copyStatus == 'success','text-danger': copyStatus == 'error' }">{{ copyStatusMessage }}</span>
         </div>
         <pre v-highlightjs="htmlSourceCode"><code class="html"></code></pre>
       </div>
       <div>
         <div class="mb-3">
           <h5>CSS</h5>
-          <b-button v-clipboard="cssSourceCode" variant="primary" size="sm">Copy CSS</b-button>
+          <b-button v-clipboard="cssSourceCode" @click="copyType = 'css'" v-clipboard:success="onCopy" v-clipboard:error="onCopyError"
+            variant="primary" size="sm">Copy CSS</b-button>
+          <span v-show="copyType == 'css'" :class="{ 'text-success': (copyStatus == 'success'),'text-danger': (copyStatus == 'error') }">{{ copyStatusMessage }}</span>
         </div>
         <pre v-highlightjs="cssSourceCode"><code class="css"></code></pre>
       </div>
@@ -112,6 +116,9 @@
     },
     data() {
       return {
+        copyType: "",
+        copyStatusMessage: "",
+        copyStatus: "error",
         starCount: 0,
         appPillSkeletons: Array.apply(null, Array(5)).map(function () {}),
         modalID: "app-modal",
@@ -163,7 +170,21 @@
     methods: {
       hideModal(id) {
         return this.$bvModal.hide(id);
+      },
+
+      onCopy() {
+        this.copyStatus = "success";
+        this.copyStatusMessage = "Copied!";
+      },
+
+      onCopyError() {
+        this.copyStatus = "error";
+        this.copyStatusMessage = "Failed to copy!";
+      },
+      triggerHideEvent() {
+        this.$root.$emit("appModalClosed");
       }
+
     },
     mounted() {
       this.$root.$on("changeSourceCode", (data) => {
@@ -172,6 +193,11 @@
           this.cssSourceCode = data.cssSourceCode;
           this.$root.$emit('bv::show::modal', this.modalID);
         }
+      });
+
+      this.$root.$on('appModalClosed', () => {
+        this.copyStatus = "";
+        this.copyStatusMessage = "";
       });
 
       this.$http.get("https://api.github.com/repos/dpalmergithub/skeleton-screens").then(res => {
