@@ -85,7 +85,7 @@
           <h5>CSS</h5>
           <b-button v-clipboard="cssSourceCode" variant="primary" size="sm">Copy CSS</b-button>
         </div>
-        <pre v-highlightjs="cssSourceCode"><code class="html"></code></pre>
+        <pre v-highlightjs="cssSourceCode"><code class="css"></code></pre>
       </div>
     </b-modal>
   </div>
