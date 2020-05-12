@@ -35,6 +35,7 @@
               <div class="app-category-pill" role="button" @click="filterSetting = 'filteredByCategory';category = 'card'">Cards</div>
               <div class="app-category-pill" role="button" @click="filterSetting = 'filteredByCategory';category = 'profile'">Profiles</div>
               <div class="app-category-pill" role="button" @click="filterSetting = 'filteredByCategory';category = 'list'">Lists</div>
+              <div class="app-category-pill" role="button" @click="filterSetting = 'filteredByCategory';category = 'image'">Image</div>
             </div>
           </div>
         </b-col>
@@ -103,6 +104,7 @@
   import LinkedInProfileBlock from "@/components/LinkedInProfileBlock"
   import SocialCard from "@/components/SocialCard"
   import MusicPlayer from "@/components/MusicPlayer"
+  import YoutubeVideo from "@/components/YoutubeVideo"
   export default {
     name: 'Home',
     components: {
@@ -112,7 +114,8 @@
       ListPanels,
       LinkedInProfileBlock,
       SocialCard,
-      MusicPlayer
+      MusicPlayer,
+      YoutubeVideo
     },
     data() {
       return {
@@ -132,24 +135,28 @@
             tags: ["panel"]
           }, {
             name: "ProfileCircleShimmer",
-            tags: ["profile"]
+            tags: ["profile", "image"]
           }, {
             name: "ImageCard",
-            tags: ["card"]
+            tags: ["card", "image"]
           }, {
             name: "ListPanels",
             tags: ["panel", "list"]
           }, {
             name: "LinkedInProfileBlock",
-            tags: ["profile"]
+            tags: ["profile", "image"]
           },
           {
             name: "SocialCard",
-            tags: ["card", "profile"]
+            tags: ["card", "profile", "image"]
           },
           {
             name: "MusicPlayer",
-            tags: ["panel", "card", "music"]
+            tags: ["panel", "card", "music", "image"]
+          },
+          {
+            name: "YoutubeVideo",
+            tags: ["panel", "card", "music", "video", "image"]
           }
         ]
       }

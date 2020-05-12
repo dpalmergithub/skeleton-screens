@@ -2,7 +2,7 @@
     <AppBrowserPanel :sourceCode="sourceCode">
         <div>
             <div class="h4 my-3 text-center">
-                LinkedIn Profile Block
+                LinkedIn Profile
             </div>
             <div class="skeleton-linkedin-profile-block-wrapper">
                 <div class="skeleton-linkedin-profile-block-header"></div>

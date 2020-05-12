@@ -2,7 +2,7 @@
     <AppBrowserPanel :sourceCode="sourceCode">
         <div>
             <div class="h4 my-3 text-center">
-                Title-Content-Button
+                Blog Post
             </div>
             <div class="skeleton-panel">
                 <div class="skeleton-panel-title"></div>
@@ -41,11 +41,11 @@
     }
 
     .skeleton-panel-title {
-        max-width: 200px;
+        max-width: 100px;
     }
 
     .skeleton-panel-content {
-        max-width: 200px;
+        max-width: 180px;
     }
 
     .skeleton-panel-btn {
@@ -56,7 +56,7 @@
     .skeleton-panel-content,
     .skeleton-panel-btn {
         border-radius: 100px;
-        height: 25px;
+        height: 20px;
         margin: 15px 0;
         background-color: #e1e1e1;
         opacity: 0.5;

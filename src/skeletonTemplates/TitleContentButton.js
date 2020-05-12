@@ -9,7 +9,7 @@ template.htmlSourceCode = `
 template.cssSourceCode = `
 <style>
 .skeleton-panel {
-    max-width: 200px;
+    max-width: 250px;
     padding: 15px;
     border: thin solid #e6e6e6;
     border-radius: 3px;
@@ -18,11 +18,11 @@ template.cssSourceCode = `
 }
 
 .skeleton-panel-title {
-    max-width: 200px;
+    max-width: 100px;
 }
 
 .skeleton-panel-content {
-    max-width: 100px;
+    max-width: 180px;
 }
 
 .skeleton-panel-btn {
@@ -33,7 +33,7 @@ template.cssSourceCode = `
 .skeleton-panel-content,
 .skeleton-panel-btn {
     border-radius: 100px;
-    height: 25px;
+    height: 20px;
     margin: 15px 0;
     background-color: #e1e1e1;
     opacity: 0.5;

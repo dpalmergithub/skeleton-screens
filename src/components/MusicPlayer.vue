@@ -39,6 +39,7 @@
 <style scoped>
     .skeleton-mp-panel-wrapper {
         border: thin solid rgba(0, 0, 0, .05);
+        box-shadow: 0px 0px 4px rgba(0, 0, 0, .10);
         height: 300px;
         width: 250px;
         margin: 0 auto;
