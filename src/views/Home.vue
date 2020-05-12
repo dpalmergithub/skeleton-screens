@@ -30,7 +30,7 @@
               <div v-for="(p,index) in appPillSkeletons" :key="index" class="skeleton-app-category-pill"></div>
             </div>
             <div v-if="!loading" class="app-categories d-inline-block d-sm-flex justify-content-center">
-              <div v-for="(p,index) in filterButtons" :key="index" class="app-category-pill" role="button" @click="filterSetting = p.filterSetting;category = p.category">{{ p.title }}</div>
+              <div v-for="(p,index) in filterButtons" :key="index" :class="p.class" class="app-category-pill" role="button" @click="setActive($event);filterSetting = p.filterSetting;category = p.category">{{ p.title }}</div>
             </div>
           </div>
         </b-col>
@@ -127,12 +127,12 @@
         htmlSourceCode: "",
         cssSourceCode: "",
         filterButtons:[
-        {title:"All",category:"allComponents",filterSetting:"allComponents"},
-        {title:"Panels",category:"panel",filterSetting:"filteredByCategory"},
-        {title:"Cards",category:"card",filterSetting:"filteredByCategory"},
-        {title:"Profiles",category:"profile",filterSetting:"filteredByCategory"},
-        {title:"Lists",category:"list",filterSetting:"filteredByCategory"},
-        {title:"Images",category:"image",filterSetting:"filteredByCategory"}
+        {title:"All",class:"active",category:"allComponents",filterSetting:"allComponents"},
+        {title:"Panels",class:"",category:"panel",filterSetting:"filteredByCategory"},
+        {title:"Cards",class:"",category:"card",filterSetting:"filteredByCategory"},
+        {title:"Profiles",class:"",category:"profile",filterSetting:"filteredByCategory"},
+        {title:"Lists",class:"",category:"list",filterSetting:"filteredByCategory"},
+        {title:"Images",class:"",category:"image",filterSetting:"filteredByCategory"}
       ],
         components: [{
             name: "TitleContentButton",
@@ -180,6 +180,16 @@
       }
     },
     methods: {
+      setActive(evt){
+        var activePills = document.querySelectorAll('.app-category-pill');
+        let i = 0;
+        for (i = 0; i < activePills.length; i++){
+          activePills[i].classList.remove('active');
+       }
+       evt.target.classList.toggle("active");
+       return;
+      },
+
       hideModal(id) {
         return this.$bvModal.hide(id);
       },
