@@ -30,12 +30,7 @@
               <div v-for="(p,index) in appPillSkeletons" :key="index" class="skeleton-app-category-pill"></div>
             </div>
             <div v-if="!loading" class="app-categories d-inline-block d-sm-flex justify-content-center">
-              <div class="app-category-pill" role="button" @click="filterSetting = 'allComponents'">All</div>
-              <div class="app-category-pill" role="button" @click="filterSetting = 'filteredByCategory';category = 'panel'">Panels</div>
-              <div class="app-category-pill" role="button" @click="filterSetting = 'filteredByCategory';category = 'card'">Cards</div>
-              <div class="app-category-pill" role="button" @click="filterSetting = 'filteredByCategory';category = 'profile'">Profiles</div>
-              <div class="app-category-pill" role="button" @click="filterSetting = 'filteredByCategory';category = 'list'">Lists</div>
-              <div class="app-category-pill" role="button" @click="filterSetting = 'filteredByCategory';category = 'image'">Image</div>
+              <div v-for="(p,index) in filterButtons" :key="index" class="app-category-pill" role="button" @click="filterSetting = p.filterSetting;category = p.category">{{ p.title }}</div>
             </div>
           </div>
         </b-col>
@@ -119,17 +114,26 @@
     },
     data() {
       return {
+        isActive:false,
         copyType: "",
         copyStatusMessage: "",
         copyStatus: "error",
         starCount: 0,
-        appPillSkeletons: Array.apply(null, Array(5)).map(function () {}),
+        appPillSkeletons: Array.apply(null, Array(6)).map(function () {}),
         modalID: "app-modal",
         filterSetting: "allComponents",
         category: '',
         loading: true,
         htmlSourceCode: "",
         cssSourceCode: "",
+        filterButtons:[
+        {title:"All",category:"allComponents",filterSetting:"allComponents"},
+        {title:"Panels",category:"panel",filterSetting:"filteredByCategory"},
+        {title:"Cards",category:"card",filterSetting:"filteredByCategory"},
+        {title:"Profiles",category:"profile",filterSetting:"filteredByCategory"},
+        {title:"Lists",category:"list",filterSetting:"filteredByCategory"},
+        {title:"Images",category:"image",filterSetting:"filteredByCategory"}
+      ],
         components: [{
             name: "TitleContentButton",
             tags: ["panel"]
@@ -167,6 +171,7 @@
       },
 
       allComponents() {
+        //this.isActive = true;
         return this.components;
       },
 
@@ -267,8 +272,8 @@
   .app-category-pill {
     text-align: center;
     padding: 6px 15px;
-    background: #64a;
-    color:#fff;
+    background:#fff;
+    color: #64a;
     width: 100px;
     margin: 4px;
     cursor: pointer;
@@ -276,14 +281,15 @@
     border-radius: 100px;
     box-shadow:1px 4px 10px 1px rgba(0,0,0,.20);
     transition:all 0.50s ease;
-    border: 2px solid transparent;
+    border: 2px solid #64a;
   }
 
-  .app-category-pill:hover{
-    border:2px solid #64a;
-    background:#fff;
-    color: #64a;
+  .app-category-pill:hover,.app-category-pill.active{
+    border:2px solid transparent;
+    background: #64a;
+    color:#fff;
   }
+  
 
   .app-star-count-wrapper {
     font-size: 1.8rem;
