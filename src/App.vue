@@ -85,6 +85,16 @@
     padding-right: 0px !important;
   }
 
+  .btn.btn-primary{
+    background:#64a;
+    border-color:#64a;
+  }
+
+  .btn.btn-primary:hover,  .btn.btn-primary:active,  .btn.btn-primary:focus{
+    background:rgba(102,68,170,.90) !important;
+    border-color:rgba(102,68,170,.90)  !important;
+  }
+
   @media (min-width: 576px) {
     .card-columns {
       column-count: 1 !important;

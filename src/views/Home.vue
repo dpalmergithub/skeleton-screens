@@ -82,7 +82,7 @@
         <div class="mb-3">
           <h5>CSS</h5>
           <b-button v-clipboard="cssSourceCode" @click="copyType = 'css'" v-clipboard:success="onCopy" v-clipboard:error="onCopyError"
-            variant="primary" size="sm">Copy CSS</b-button>
+           variant="primary"  size="sm">Copy CSS</b-button>
           <span v-show="copyType == 'css'" class="ml-2" :class="{ 'text-success': (copyStatus == 'success'),'text-danger': (copyStatus == 'error') }">{{ copyStatusMessage }}</span>
         </div>
         <pre v-highlightjs="cssSourceCode"><code class="css"></code></pre>
