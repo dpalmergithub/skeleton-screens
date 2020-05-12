@@ -16,7 +16,7 @@
         </div>
         <!--https://api.github.com/repos/dpalmergithub/skeleton-screens-->
         <a href="https://github.com/dpalmergithub/skeleton-screens" target="_blank" class="d-flex justify-content-center align-items-center mt-3 app-star-count-wrapper">
-          <b-icon icon="star-fill"></b-icon>
+          <b-icon icon="star-fill" style="color:#64a;"></b-icon>
           <span class="d-inline-block ml-2" style="margin-top:2px;">{{ starCount }}</span>
         </a>
         <small class="text-muted">This page is a work in progress</small>
@@ -267,13 +267,22 @@
   .app-category-pill {
     text-align: center;
     padding: 6px 15px;
-    background: #ccc;
-    height: 36px;
+    background: #64a;
+    color:#fff;
     width: 100px;
-    margin: 5px;
+    margin: 4px;
     cursor: pointer;
     display: inline-block;
     border-radius: 100px;
+    box-shadow:1px 4px 10px 1px rgba(0,0,0,.20);
+    transition:all 0.50s ease;
+    border: 2px solid transparent;
+  }
+
+  .app-category-pill:hover{
+    border:2px solid #64a;
+    background:#fff;
+    color: #64a;
   }
 
   .app-star-count-wrapper {
