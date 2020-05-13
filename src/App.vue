@@ -24,6 +24,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: #2c3e50;
+    line-height: 1.5;
   }
 
   #nav {
@@ -85,14 +86,16 @@
     padding-right: 0px !important;
   }
 
-  .btn.btn-primary{
-    background:#64a;
-    border-color:#64a;
+  .btn.btn-primary {
+    background: #64a;
+    border-color: #64a;
   }
 
-  .btn.btn-primary:hover,  .btn.btn-primary:active,  .btn.btn-primary:focus{
-    background:rgba(102,68,170,.90) !important;
-    border-color:rgba(102,68,170,.90)  !important;
+  .btn.btn-primary:hover,
+  .btn.btn-primary:active,
+  .btn.btn-primary:focus {
+    background: rgba(102, 68, 170, .90) !important;
+    border-color: rgba(102, 68, 170, .90) !important;
   }
 
   @media (min-width: 576px) {

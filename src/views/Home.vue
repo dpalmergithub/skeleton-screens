@@ -1,8 +1,9 @@
 <template>
   <div>
-    <b-jumbotron header-level="5" class="rounded-0 text-center" text-variant="dark" bg-variant="light">
+    <b-jumbotron header-level="5" class="rounded-0 text-left" text-variant="dark" bg-variant="light">
       <div v-show="loading" class="skeleton-app-header">
         <div class="skeleton-app-title"></div>
+        <div class="skeleton-app-subtext"></div>
         <div class="skeleton-app-subtext"></div>
         <div class="skeleton-app-subtext"></div>
       </div>
@@ -11,15 +12,17 @@
           <b>Skeleton Screens</b>
         </div>
         <div class="app-header-subtext">
-          <p style="font-size:1.8rem;">Tired of loading circles?</p>
-          <p style="font-size:1.5rem;">Don't worry, we are too.</p>
+          <p>Tired of loading circles? Don't worry, we are too. Copy and paste any component or layout, make it your own, and
+            use it in your next project.</p>
+          <!--<p style="font-size:1.8rem;">Tired of loading circles?</p>
+          <p style="font-size:1.5rem;">Don't worry, we are too.</p>-->
+          <a href="https://github.com/dpalmergithub/skeleton-screens" target="_blank" class="d-flex justify-content-center align-items-center mt-3 app-star-count-wrapper">
+            <span>Github</span>
+            <b-icon icon="star-fill" class="mx-2" style="color:#64a;"></b-icon>
+            <span class="d-inline-block" style="margin-top:2px;">{{ starCount }}</span>
+          </a>
         </div>
         <!--https://api.github.com/repos/dpalmergithub/skeleton-screens-->
-        <a href="https://github.com/dpalmergithub/skeleton-screens" target="_blank" class="d-flex justify-content-center align-items-center mt-3 app-star-count-wrapper">
-          <b-icon icon="star-fill" style="color:#64a;"></b-icon>
-          <span class="d-inline-block ml-2" style="margin-top:2px;">{{ starCount }}</span>
-        </a>
-        <small class="text-muted">This page is a work in progress</small>
       </div>
     </b-jumbotron>
     <b-container>
@@ -82,7 +85,7 @@
         <div class="mb-3">
           <h5>CSS</h5>
           <b-button v-clipboard="cssSourceCode" @click="copyType = 'css'" v-clipboard:success="onCopy" v-clipboard:error="onCopyError"
-           variant="primary"  size="sm">Copy CSS</b-button>
+            variant="primary" size="sm">Copy CSS</b-button>
           <span v-show="copyType == 'css'" class="ml-2" :class="{ 'text-success': (copyStatus == 'success'),'text-danger': (copyStatus == 'error') }">{{ copyStatusMessage }}</span>
         </div>
         <pre v-highlightjs="cssSourceCode"><code class="css"></code></pre>
@@ -114,7 +117,7 @@
     },
     data() {
       return {
-        isActive:false,
+        isActive: false,
         copyType: "",
         copyStatusMessage: "",
         copyStatus: "error",
@@ -126,14 +129,43 @@
         loading: true,
         htmlSourceCode: "",
         cssSourceCode: "",
-        filterButtons:[
-        {title:"All",class:"active",category:"allComponents",filterSetting:"allComponents"},
-        {title:"Panels",class:"",category:"panel",filterSetting:"filteredByCategory"},
-        {title:"Cards",class:"",category:"card",filterSetting:"filteredByCategory"},
-        {title:"Profiles",class:"",category:"profile",filterSetting:"filteredByCategory"},
-        {title:"Lists",class:"",category:"list",filterSetting:"filteredByCategory"},
-        {title:"Images",class:"",category:"image",filterSetting:"filteredByCategory"}
-      ],
+        filterButtons: [{
+            title: "All",
+            class: "active",
+            category: "allComponents",
+            filterSetting: "allComponents"
+          },
+          {
+            title: "Panels",
+            class: "",
+            category: "panel",
+            filterSetting: "filteredByCategory"
+          },
+          {
+            title: "Cards",
+            class: "",
+            category: "card",
+            filterSetting: "filteredByCategory"
+          },
+          {
+            title: "Profiles",
+            class: "",
+            category: "profile",
+            filterSetting: "filteredByCategory"
+          },
+          {
+            title: "Lists",
+            class: "",
+            category: "list",
+            filterSetting: "filteredByCategory"
+          },
+          {
+            title: "Images",
+            class: "",
+            category: "image",
+            filterSetting: "filteredByCategory"
+          }
+        ],
         components: [{
             name: "TitleContentButton",
             tags: ["panel"]
@@ -180,14 +212,14 @@
       }
     },
     methods: {
-      setActive(evt){
+      setActive(evt) {
         var activePills = document.querySelectorAll('.app-category-pill');
         let i = 0;
-        for (i = 0; i < activePills.length; i++){
+        for (i = 0; i < activePills.length; i++) {
           activePills[i].classList.remove('active');
-       }
-       evt.target.classList.toggle("active");
-       return;
+        }
+        evt.target.classList.toggle("active");
+        return;
       },
 
       hideModal(id) {
@@ -239,10 +271,37 @@
   .app-header-content-wrapper {
     opacity: 0;
     animation: fade-in 1s forwards;
+    background: url("../assets/Grid_Skull_nonsquare@2x.png");
+    background-repeat: no-repeat;
+    background-position: center right;
+    background-size: contain;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+
+  @media screen and (max-width:546px) {
+    .app-header-content-wrapper {
+      background-size: 250px 250px;
+      background: none;
+    }
+  }
+
+  .skeleton-app-header {
+    max-width: 960px;
+    margin: 0 auto;
   }
 
   .app-header-title {
     font-weight: 900;
+    font-size: 4.25rem;
+    color: #000;
+  }
+
+  .app-header-subtext {
+    max-width: 26rem;
+    font-size: 1.2rem;
+    font-weight: bold;
   }
 
   .skeleton-app-category-pill {
@@ -260,9 +319,9 @@
 
   .skeleton-app-title {
     max-width: 600px;
-    border-radius: 100px;
-    height: 85px;
-    margin: 0 auto;
+    border-radius: 3px;
+    height: 75px;
+    margin-bottom: 15px;
     background-color: #e1e1e1;
     opacity: 0.5;
     animation: fading 1.5s infinite;
@@ -270,10 +329,10 @@
   }
 
   .skeleton-app-subtext {
-    max-width: 200px;
+    max-width: 26rem;
     border-radius: 100px;
-    height: 20px;
-    margin: 8px auto 0 auto;
+    height: 16px;
+    margin: 15px 0 0 0;
     background-color: #e1e1e1;
     opacity: 0.5;
     animation: fading 1.5s infinite;
@@ -282,24 +341,25 @@
   .app-category-pill {
     text-align: center;
     padding: 6px 15px;
-    background:#fff;
+    background: #fff;
     color: #64a;
     width: 100px;
     margin: 4px;
     cursor: pointer;
     display: inline-block;
     border-radius: 100px;
-    box-shadow:1px 4px 10px 1px rgba(0,0,0,.20);
-    transition:all 0.50s ease;
+    box-shadow: 1px 4px 10px 1px rgba(0, 0, 0, .20);
+    transition: all 0.50s ease;
     border: 2px solid #64a;
   }
 
-  .app-category-pill:hover,.app-category-pill.active{
-    border:2px solid transparent;
+  .app-category-pill:hover,
+  .app-category-pill.active {
+    border: 2px solid transparent;
     background: #64a;
-    color:#fff;
+    color: #fff;
   }
-  
+
 
   .app-star-count-wrapper {
     font-size: 1.8rem;
