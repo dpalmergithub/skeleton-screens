@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-jumbotron header-level="5" class="rounded-0 text-left" text-variant="dark" bg-variant="light">
+    <b-jumbotron header-level="5" class="rounded-0" text-variant="dark" bg-variant="light">
       <div v-show="loading" class="skeleton-app-header">
         <div class="skeleton-app-title"></div>
         <div class="skeleton-app-subtext"></div>
@@ -10,6 +10,9 @@
       <div class="app-header-content-wrapper" v-show="!loading">
         <div class="h1 app-header-title display-3">
           <b>Skeleton Screens</b>
+        </div>
+        <div class="app-image-xs d-block d-md-none my-3">
+          <img class="d-block mx-auto img-fluid" src="../assets/Grid_Skull_nonsquare@2x.png" />
         </div>
         <div class="app-header-subtext">
           <p>Tired of loading circles? Don't worry, we are too. Copy and paste any component or layout, make it your own, and
@@ -274,20 +277,7 @@
     background: url("../assets/Grid_Skull_nonsquare@2x.png");
     background-repeat: no-repeat;
     background-position: center right;
-    background-size: contain;
-    max-width: 960px;
-    margin: 0 auto;
-  }
-
-
-  @media screen and (max-width:546px) {
-    .app-header-content-wrapper {
-      background-size: 250px 250px;
-      background: none;
-    }
-  }
-
-  .skeleton-app-header {
+    background-size: 360px;
     max-width: 960px;
     margin: 0 auto;
   }
@@ -302,6 +292,29 @@
     max-width: 26rem;
     font-size: 1.2rem;
     font-weight: bold;
+  }
+
+  @media screen and (max-width:767px) {
+    .app-header-content-wrapper {
+      background: none;
+      text-align: center;
+      max-width: 100%;
+    }
+
+    .app-header-content-wrapper img {
+      height: 250px;
+      width: 250px;
+    }
+
+    .app-header-subtext {
+      margin: 0 auto;
+      text-align: center;
+    }
+  }
+
+  .skeleton-app-header {
+    max-width: 960px;
+    margin: 0 auto;
   }
 
   .skeleton-app-category-pill {
