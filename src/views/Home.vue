@@ -42,7 +42,7 @@
         </b-col>
       </b-row>
       <hr/>
-      <div>
+      <div class="app-components-wrapper">
         <div class="card-columns">
           <!--Skeleton Components
         ************************
@@ -292,6 +292,10 @@
     max-width: 26rem;
     font-size: 1.2rem;
     font-weight: bold;
+  }
+
+  .app-components-wrapper {
+    min-height: 100vh;
   }
 
   @media screen and (max-width:767px) {
