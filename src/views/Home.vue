@@ -98,7 +98,7 @@
 </template>
 
 <script>
-  import TitleContentButton from "@/components/TitleContentButton"
+  import BlogPostV1 from "@/components/BlogPostV1"
   import ProfileCircleShimmer from "@/components/ProfileCircleShimmer"
   import ImageCard from "@/components/ImageCard"
   import ListPanels from "@/components/ListPanels"
@@ -106,17 +106,19 @@
   import SocialCard from "@/components/SocialCard"
   import MusicPlayer from "@/components/MusicPlayer"
   import YoutubeVideo from "@/components/YoutubeVideo"
+  import BlogPostV2 from "@/components/BlogPostV2"
   export default {
     name: 'Home',
     components: {
-      TitleContentButton,
+      BlogPostV1,
       ProfileCircleShimmer,
       ImageCard,
       ListPanels,
       LinkedInProfileBlock,
       SocialCard,
       MusicPlayer,
-      YoutubeVideo
+      YoutubeVideo,
+      BlogPostV2
     },
     data() {
       return {
@@ -170,9 +172,14 @@
           }
         ],
         components: [{
-            name: "TitleContentButton",
-            tags: ["panel"]
-          }, {
+            name: "BlogPostV1",
+            tags: ["panel", "card"]
+          },
+          {
+            name: "BlogPostV2",
+            tags: ["panel", "card", "image"]
+          },
+          {
             name: "ProfileCircleShimmer",
             tags: ["profile", "image"]
           }, {
@@ -191,11 +198,11 @@
           },
           {
             name: "MusicPlayer",
-            tags: ["panel", "card", "music", "image"]
+            tags: ["panel", "card", "image"]
           },
           {
             name: "YoutubeVideo",
-            tags: ["panel", "card", "music", "video", "image"]
+            tags: ["panel", "card", "image"]
           }
         ]
       }

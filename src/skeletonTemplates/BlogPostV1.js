@@ -3,7 +3,6 @@ template.htmlSourceCode = `
 <div class="skeleton-panel">
     <div class="skeleton-panel-title"></div>
     <div class="skeleton-panel-content"></div>
-    <div class="skeleton-panel-btn"></div>
 </div>`.trim();
 
 template.cssSourceCode = `
@@ -18,26 +17,23 @@ template.cssSourceCode = `
 }
 
 .skeleton-panel-title {
-    max-width: 100px;
+    border-radius: 100px;
+    max-width: 50px;
+    height: 10px;
 }
 
 .skeleton-panel-content {
-    max-width: 180px;
-}
-
-.skeleton-panel-btn {
-    max-width: 50px;
+    height: 50px;
+    margin: 5px 0;
+    border-radius: 3px;
 }
 
 .skeleton-panel-title,
-.skeleton-panel-content,
-.skeleton-panel-btn {
-    border-radius: 100px;
-    height: 20px;
-    margin: 15px 0;
+.skeleton-panel-content {
     background-color: #e1e1e1;
     opacity: 0.5;
     animation: fading 1.5s infinite;
+    transition: all 1.5s;
 }
 
 @keyframes fading {

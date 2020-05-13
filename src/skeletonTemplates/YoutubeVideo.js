@@ -11,6 +11,7 @@ template.htmlSourceCode = `
 </div>`.trim();
 
 template.cssSourceCode = `
+<style>
 .skeleton-yt-card {
     max-width: 250px;
     max-height: 300px;
@@ -42,6 +43,7 @@ template.cssSourceCode = `
     background-size: 100px auto, 150px auto;
     background-repeat: no-repeat;
     background-position: 10px 0, 10px 30px;
-}`.trim();
+}
+</style>`.trim();
 
 export default template;
