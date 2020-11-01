@@ -1,5 +1,5 @@
 <template>
-    <div class="app-panel shadow">
+    <div class="app-panel">
         <div class="app-panel-header d-flex align-items-center">
             <div class="app-panel-header-red-circle"></div>
             <div class="app-panel-header-orange-circle"></div>
